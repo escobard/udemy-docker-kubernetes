@@ -42,3 +42,32 @@
     - this process runs for 10 seconds, before its shut down with the `kill` command.
 - running `docker kill [container id]` forcefully destroys a docker container, without waiting for the running processes to gracefully shut down.
     - used to kill process quickly, and stop corrupt processes.
+
+## Execute an additional command in a running container
+- running `docker exec -it [container id] [command]`
+    - to run redis cli as an example: `docker exec -it 09asdfajs redis-cli`
+    - `-it` flag allows us to run commands input commands to the container
+    - this is another way of running a command within a container, without explicitely accessing the terminal.
+    
+## Purpose of the IT flag
+- every running process in linux (which is the docker default) has 3 running proces:
+    - STDIN - handles inputs into the process
+    - STDOUT - handles outputs into the process
+    - STDERR - handles process errors
+- `-i` allows for inputs
+- `-t` specifies the output of the docker process.
+- `-it` allows for inputs, tells the docker container that the outputs should be reflected in the `terminal`.
+
+## Getting a command prompt in a container
+- to open a linux terminal within a docker container, run: `docker exec it [docker id] sh`
+    - the `sh` flag opens up a terminal, which runs and exists within the docker container.
+-  to exit a terminal within a docker container, run `control + D`
+    - another way to exit is simply typing the `exit` command within the running terminal.
+
+## Starting a docker container with a terminal
+- running `docker run -it busybox sh` runs the specified container, and starts a linux terminal after the container is initialized.
+
+## side note, kernels:
+- a kernel is UNIQUE to each docker container, docker containers do not share a kernel.
+    - this is different with kubernetes where you have multiple containers in a pod, but more on that later.
+    
