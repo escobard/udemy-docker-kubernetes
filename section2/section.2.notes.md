@@ -34,3 +34,11 @@
             - dangling images
             - all build caches
 
+## Retrieving log outputs
+- running `docker logs [container id]` fetches the logs of the container.
+
+## Stop running container
+- running `docker stop [container id]` stops the container healthily, stops running processes safely.
+    - this process runs for 10 seconds, before its shut down with the `kill` command.
+- running `docker kill [container id]` forcefully destroys a docker container, without waiting for the running processes to gracefully shut down.
+    - used to kill process quickly, and stop corrupt processes.
