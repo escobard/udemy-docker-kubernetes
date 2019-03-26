@@ -61,3 +61,28 @@
 
 - created after each step is succesfully ran, based off the intermediate docker image created in the step.
 - this temporary image is then used in the following step as the base.
+
+### Rebuilds with Cache
+- changing a base docker file, grabs the CACHED image for the previous step.
+    - this allows for rapid rebuilding of image steps that bage been built on your machine.
+- this destroys the cached intermediate image for every step after.
+    - essentially this means that every step after the changed lined of a docker file, requires new intermediate images
+
+### Tagging an image
+- using `docker build -t escobard/containerName:latest .`
+    - `docker build` explained above.
+    - `-t` tags the image with a name, to re-use with `docker build containerName`.
+    - `escobard/test:latest` first argument is the user's docker username, second argument is the container name, last argument is the version of the image from docker server, usually latest.
+    - `.` grabs the dockerfile from the current directory.
+- images that have simple names like `docker build redis` are community images, that do not follow this convention.
+- can run this version with `docker run escobar/test`.
+    - there is a common warning on windows, which may make it seem like the container wasn't tagged, but it is.
+
+### Docker commit
+- using `docker commit -c 'CMD ["redis-server"]' containerId`
+    - customizes the running docker container, with new functionality.
+    - `docker commit -c` updates the running image with the parameters provided.
+    - `'CMD ["redis-server"]' ` adds a command to the container.
+    - this outputs an ID with the modified container.
+- using `docker run newContainerID` runs the new modified docker image, in a new container.
+- not the default way of creating containers, but its an option if necessary.
