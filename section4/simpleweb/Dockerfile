@@ -19,4 +19,7 @@ RUN npm install
 # Tell the image what to do when it starts
 
 ## run the npm start command
+### this depends on the docker run -p 8080:5000 command, to utilize the 8080 port, within the docker container, to access the running node app on port 5000.
+### For further clarity, the node.js port is 5000, but the docker container port which contacts the running node.js application is 8080
+### This allows for intelligent port mapping functionality for production.
 CMD ["npm", "start"]; 
