@@ -16,11 +16,18 @@ WORKDIR /usr/simpleweb
 
 ## Copies all files in the parent directory to the parent docker directory - not best practice, but will do for now
 ### files here can be checked (assuming there is a tagged docker container running) with docker run -it escobard/simpleweb sh
-COPY ./ ./
+
+### copies only package.json file, to separate install steps and build steps - allows for more efficient re-builds, by separating the steps
+COPY ./package.json ./
 
 # Download and install dependencies 
 ## this installs our npm packages into the docker container - depends on npm being installed in the container, and package.json being available
 RUN npm install
+
+## copies everything else over, only running the install process if the initial build steps need to be updated
+## allows for much more efficient re-building of the container, when application logic is updated
+COPY ./ ./
+
 
 # Tell the image what to do when it starts
 
