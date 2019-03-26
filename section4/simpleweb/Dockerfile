@@ -7,9 +7,15 @@
 ### Alpine in the docker world means as small, stripped out and compact as possible
 FROM node:alpine
 
+# this adds a reference folder, as the working directory fo the container to utilize, to avoid installing file dependencies in root directory
+## using the /usr/simpleweb directory - in linux the /usr location is a good place to store commonly used files
+### can test this by using `docker exec -it [containerID] sh`, working directory 
+WORKDIR /usr/simpleweb
+
 # the COPY command copies files from the first specified directory, to the second specified directory in the docker container
 
 ## Copies all files in the parent directory to the parent docker directory - not best practice, but will do for now
+### files here can be checked (assuming there is a tagged docker container running) with docker run -it escobard/simpleweb sh
 COPY ./ ./
 
 # Download and install dependencies 

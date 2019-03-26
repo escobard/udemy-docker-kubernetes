@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "simple node.js application in a docker container",
   "main": "index.js",
+  "repository": {
+    "url": "https://github.com/escobard/docker-courses/section4/simpleweb"
+  },
   "scripts": {
     "test": "test",
     "start": "node index.js"
