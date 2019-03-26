@@ -7,12 +7,16 @@
 ### Alpine in the docker world means as small, stripped out and compact as possible
 FROM node:alpine
 
-# Download and install dependencies
+# the COPY command copies files from the first specified directory, to the second specified directory in the docker container
 
-## this installs our npm packages into the docker container - depends on npm being installed in the container
+## Copies all files in the parent directory to the parent docker directory - not best practice, but will do for now
+COPY ./ ./
+
+# Download and install dependencies 
+## this installs our npm packages into the docker container - depends on npm being installed in the container, and package.json being available
 RUN npm install
 
 # Tell the image what to do when it starts
 
 ## run the npm start command
-CMD ["npm", "start"];
+CMD ["npm", "start"]; 
