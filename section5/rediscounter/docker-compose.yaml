@@ -1,3 +1,6 @@
+# docker-compose is used to run multiple docker containers in a single VM, giving them free access to each other.
+# this is super important and will be very useful in contenarizing dapps
+
 ## version of the docker-compose we want to use
 version: '3'
 

@@ -3,7 +3,13 @@ redis = require('redis'),
 app = express(),
 port = 8081;
 // connects to redis client 
-client = redis.createClient();
+client = redis.createClient({
+    // traditionally, this would require a URL - since we are using docker-compose, we can use the name of the running docker service instead
+    host: 'redis-server',
+
+    // this is the default redis port number, which is the port the server will be running on within the container, not necessary with docker, but just to be thorough
+    port: 6379
+});
 
 // sets creates the visits key, sets initial visits value to 0
 client.set('visits', 0);
