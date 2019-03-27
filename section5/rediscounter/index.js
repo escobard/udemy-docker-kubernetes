@@ -22,7 +22,9 @@ app.get('/', (req, res) =>{
         res.send('Number of visits is ' + visits);
 
         // saves an entry, under the key visits: numberOfVisitors
-        client.set('visits', visits + 1);
+        client.set('visits', parseInt(visits) + 1);
+
+        console.log('Number of visits:', visits)
     })
 })
 
