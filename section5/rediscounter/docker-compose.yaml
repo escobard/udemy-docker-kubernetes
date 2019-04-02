@@ -11,6 +11,12 @@ services:
     ## tells docker-compose to grab the redis base image from the docker hub
     image: 'redis'
   node-app:
+    ## this adds a restart flag, which specifies when the container should restart in case of a crash - https://docs.docker.com/compose/compose-file/#restart
+    ### "no""", never restarts
+    ### always, always restarts
+    ### on-failure, only restart if the container stops with an error code
+    ### unless-stopped, always restarts unless the developer stops it
+    restart: always
     ## builds a docker container, but expects a Dockerfile to be present in the passed directory
     build: .
     ## sets the ports that the service will use, first argument is the port that DOCKER will open for public use, second argument is the port that the RUNNING APP uses, which is revealed on the DOCKER port

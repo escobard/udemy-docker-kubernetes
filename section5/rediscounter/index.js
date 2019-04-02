@@ -1,5 +1,6 @@
 const express = require('express'),
 redis = require('redis'),
+process = require('process'),
 app = express(),
 port = 8081;
 // connects to redis client 
@@ -15,6 +16,9 @@ client = redis.createClient({
 client.set('visits', 0);
 
 app.get('/', (req, res) =>{
+
+    // breaks the process for testing purposes
+    process.exit(0);
 
     // utilizes the visits key set above
     client.get('visits', (err, visits) =>{
