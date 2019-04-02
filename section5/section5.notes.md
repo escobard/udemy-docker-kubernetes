@@ -14,4 +14,8 @@
 - is the equivalent of `docker build .` and `docker run myimage`.
 
 ### docker-compose down
-- stops the running 
+- stops the running container
+
+### docker-compose ps
+- can only be used in the directory that contains the docker-compose.yaml file
+- displays the status of the running services (docker containers) controlled by the docker network
