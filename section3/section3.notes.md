@@ -86,3 +86,7 @@
     - this outputs an ID with the modified container.
 - using `docker run newContainerID` runs the new modified docker image, in a new container.
 - not the default way of creating containers, but its an option if necessary.
+
+### Docker Push
+- using `docker push escobard/containerName:latest` 
+- this pushes a copy of the container to the docker repository
