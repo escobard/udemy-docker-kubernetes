@@ -1,0 +1,25 @@
+# docker-compose is used to run multiple docker containers in a single VM, giving them free access to each other.
+# this is super important and will be very useful in contenarizing dapps
+
+## version of the docker-compose we want to use
+version: '3'
+
+## services: in the docker world, essentially a type of container that serves a purpose, in this case rediscounter is one, redis-server is another
+services:
+  ## specifies the name of the redis service
+  redis-server:
+    ## tells docker-compose to grab the redis base image from the docker hub
+    image: 'redis'
+  node-app:
+    ## this adds a restart flag, which specifies when the container should restart in case of a crash - https://docs.docker.com/compose/compose-file/#restart
+    ### "no""", never restarts
+    ### always, always restarts
+    ### on-failure, only restart if the container stops with an error code
+    ### unless-stopped, always restarts unless the developer stops it
+    restart: always
+    ## builds a docker container, but expects a Dockerfile to be present in the passed directory
+    build: .
+    ## sets the ports that the service will use, first argument is the port that DOCKER will open for public use, second argument is the port that the RUNNING APP uses, which is revealed on the DOCKER port
+    ports: 
+      - "4001:8081"
+
