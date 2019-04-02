@@ -13,7 +13,9 @@
     - we avoided using docker volumes before, because its more complex to set up volues without the use of docker-compose
 
 ### Docker volumes - Docker
-- running `docker run -p 3000:3000 -v $(pwd):/section6-ui`
+- running `docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/section6-ui`
     - `-v fileLocation` creates a volume, for the specified directory.
+    - `-v /app/node_modules` tells docker to ignore the `node_modules` folder within the container when using the parent directory volume.
+        - ensures the `local node_modules` is not `volumized within the running container`.
     - `$(pwd):/section6-ui` grabs the `working directory env variable` and `creates a volume within the specified docker working directory`.
-- 
+- in reality most containers will not actually need such a complex run command, since volumes are more easily set up within docker-compose
