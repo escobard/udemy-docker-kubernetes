@@ -11,6 +11,7 @@ services:
     ## specifies volumes, and what folders to grab / ignore
     volumes:
       ### not specifiing a folder:containerFolder argument, explicitely refers to working directory of docker folder
+      ### this folder is ignored and not synced via the user of docker volues
       - /usr/section6-ui/node_modules
       ### this creates a volume reference for the local parent directory
       ### this means any time the local directory is updated, the running docker container is updated with these files too

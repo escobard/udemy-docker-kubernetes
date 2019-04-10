@@ -19,3 +19,9 @@
         - ensures the `local node_modules` is not `volumized within the running container`.
     - `$(pwd):/section6-ui` grabs the `working directory env variable` and `creates a volume within the specified docker working directory`.
 - in reality most containers will not actually need such a complex run command, since volumes are more easily set up within docker-compose
+
+### Docker running container - commands
+- can use `docker exec -it <container name> sh` to access running container terminal
+- can start the container with a specific command with `docker run containerId command`
+    - for example `docker run j32asfa2 npm run test`
+- imo, easier to just access running terminal and then run commands on the terminal itself
