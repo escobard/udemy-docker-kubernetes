@@ -16,3 +16,14 @@ services:
       ### this creates a volume reference for the local parent directory
       ### this means any time the local directory is updated, the running docker container is updated with these files too
       - .:/usr/section6-ui
+  ## service built created specifically just for npm tests
+  ### worth considering for dev environments only
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /usr/section6-ui/node_modules
+      - .:/usr/section6-ui
+    command: ["npm", "run", "test"]
+    
