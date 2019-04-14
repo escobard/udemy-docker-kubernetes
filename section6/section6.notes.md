@@ -36,6 +36,11 @@
 - can be used alongside docker containers to serve different content in production environments vs dev.
 - used mostly in today's world to `host simple static content`.
 - for our purposes, used to serve the `build version of our react app (production version with create-react-app)`
+- to run an nginx container locally without compose, use:
+    - `docker run -p 8080:80 a3706d05156b`
+    - `-p 8080:80` = open port 8080, map to internal port 80
+        - port 80 is ngnix default open port
+    - `a3706d05156b` container ID.
 
 ### Docker phases
 - when a docker file utilizes other container processes to build its own container
