@@ -34,4 +34,14 @@
 ### Nginx
 - a web server used primarily with linux VMs.
 - can be used alongside docker containers to serve different content in production environments vs dev.
-- 
+- used mostly in today's world to `host simple static content`.
+- for our purposes, used to serve the `build version of our react app (production version with create-react-app)`
+
+### Docker phases
+- when a docker file utilizes other container processes to build its own container
+- refer to `Dockerfile.prod` within the `./ui` directory for clarity.
+- the important point is that doing things in phases, caches the `phase files, and harddrive utilization` for use in later phases.
+    - in other words files, packages, etc used during initial phases, are only cached and used to output the final phase.
+    - the files for the initial phase are only temporarily created.
+    - this means the build folder can be delivered on its own, even if the other files / packages necessary for the build are created prior to the build, since only the build folder is stored into the computer's hard drive.
+    - very very useful for CD, avoids pointless memory usage.
