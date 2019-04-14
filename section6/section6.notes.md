@@ -25,3 +25,13 @@
 - can start the container with a specific command with `docker run containerId command`
     - for example `docker run j32asfa2 npm run test`
 - imo, easier to just access running terminal and then run commands on the terminal itself
+
+### List running processes in a container
+- user `docker exec -it [containerId] sh` to access running container terminal
+- run `ps` within the running container, to list all running processes.
+    - PID lists the process ID.
+
+### Nginx
+- a web server used primarily with linux VMs.
+- can be used alongside docker containers to serve different content in production environments vs dev.
+- 

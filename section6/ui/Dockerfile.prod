@@ -1,0 +1,10 @@
+FROM node:alpine 
+
+WORKDIR '/usr/section6/ui'
+
+COPY package.json .
+
+RUN npm install
+
+RUN npm run build
+
