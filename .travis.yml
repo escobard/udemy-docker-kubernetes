@@ -8,8 +8,8 @@ services:
 ## tells which tests to build prior to installation
 before_install:
   ### tells the travis-ci service to build the docker image from the docker file specified
-  - docker build -t escobard/docker-courses -f Dockerfile.dev .
+  - cd section7 && docker build -t escobard/docker-courses -f Dockerfile.dev .
 
 ## tells the service to run a script, after the docker container has been built
 scripts:
-  - docker run escobard/docker-courses npm run test -- --coverage
+  - cd section7 && docker run escobard/docker-courses npm run test -- --coverage
