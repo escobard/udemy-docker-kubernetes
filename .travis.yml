@@ -1,5 +1,6 @@
 ## sets super user level permissions, needed to execute this build with travis-ci
 sudo: required
+language: generic
 
 ## tells travis ci that it needs to build a docker container
 services:
