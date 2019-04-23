@@ -1,0 +1,11 @@
+## sets super user level permissions, needed to execute this build with travis-ci
+sudo: required
+
+## tells travis ci that it needs to build a docker container
+services:
+  - docker
+
+## tells which tests to build prior to installation
+before_install:
+  ### tells the travis-ci service to build the docker image from the docker file specified
+  - docker build -t escobard/docker-courses -f Dockerfile.dev .
