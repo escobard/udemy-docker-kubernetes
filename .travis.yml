@@ -5,12 +5,6 @@ sudo: required
 services:
   - docker
 
-## tells which tests to build prior to installation
-before_install:
-  ### the CD is necessary to tell this file to look into the section6 folder
-  ### tells the travis-ci service to build the docker image from the docker file specified
-  - cd section7
-
 before_scripts:
   - docker build -t escobard/docker-courses -f Dockerfile.dev .
 
