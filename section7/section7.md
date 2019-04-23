@@ -3,7 +3,8 @@
 ## Travis CI
 
 - Must ensure that the `parent folder of the repository` contains the .travis.yml file.
-- Otherwise this causes a `ruby error` which causes the CI to crash.
+- language option must be set or ruby is assumed as the base OS.
+- scripts are only ran on merges to master, not 
 
 ## AWS
 

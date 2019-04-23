@@ -1,5 +1,6 @@
 ## sets super user level permissions, needed to execute this build with travis-ci
 sudo: required
+language: generic
 
 ## tells travis ci that it needs to build a docker container
 services:
@@ -7,10 +8,12 @@ services:
 
 ## tells which tests to build prior to installation
 before_install:
-  ### the CD is necessary to tell this file to look into the section6 folder
+  ### the CD is necessary
   ### tells the travis-ci service to build the docker image from the docker file specified
+  - cd section7
   - docker build -t escobard/docker-courses -f Dockerfile.dev .
 
 ## tells the service to run a script, after the docker container has been built
 scripts:
+  - cd section7
   - docker run escobard/docker-courses npm run test -- --coverage
