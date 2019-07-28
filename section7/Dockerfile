@@ -23,6 +23,9 @@ RUN npm run build
 ### grabbing alpine version, to see if it works - not specified in the tutorial
 FROM nginx:alpine
 
+## exposes port 80 for production in AWS, exposing port 80 to utilize ngnix in prod
+EXPOSE 80
+
 ### this syntax uses the --from prefix to select files from the `builder` phase established above, 
 ### second argument = the folder location within the specified phase' container
 ### third argument = the destination folder location (nginx specific syntax)
