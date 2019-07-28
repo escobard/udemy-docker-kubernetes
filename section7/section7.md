@@ -14,3 +14,4 @@
 - creates a load balancer that routes the request that is running docker
     - monitors traffic that comes in to our application
     - if lots of traffic comes into our application, it will create a new VM with a copy of the application   
+- watch deployment applicaation here: http://dockerreact-env.h2egqtzfzk.us-east-2.elasticbeanstalk.com/
