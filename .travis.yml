@@ -11,9 +11,18 @@ before_install:
   ### the CD is necessary
   ### tells the travis-ci service to build the docker image from the docker file specified
   - cd section7
-  - docker build -t escobard/docker-courses -f Dockerfile.test .
+  - docker build -t escobard/docker-courses -f Dockerfile.dev .
 
 ## tells the service to run a script, after the docker container has been built
 scripts:
   - cd section7
   - docker run escobard/docker-courses npm run test -- --coverage
+
+## tells travis CI where we want to deploy, these settings are specific for AWS beanstalk
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-689097371951"
+  bucker_path: "docker-react"
