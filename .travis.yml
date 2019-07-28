@@ -17,3 +17,14 @@ before_install:
 scripts:
   - cd section7
   - docker run escobard/docker-courses npm run test -- --coverage
+
+## tells travis CI where we want to deploy, these settings are specific for AWS beanstalk
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-689097371951"
+  bucker_path: "docker-react"
+  on:
+    branch: master

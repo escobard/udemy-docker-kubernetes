@@ -10,3 +10,7 @@
 
 ### Elastic beanstalk
 - the top choice for running individual docker containers on a server
+- can be used to quickly deploy and create an environment
+- creates a load balancer that routes the request that is running docker
+    - monitors traffic that comes in to our application
+    - if lots of traffic comes into our application, it will create a new VM with a copy of the application   
