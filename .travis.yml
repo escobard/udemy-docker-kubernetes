@@ -11,7 +11,7 @@ before_install:
   ### the CD is necessary
   ### tells the travis-ci service to build the docker image from the docker file specified
   - cd section7
-  - docker build -t escobard/docker-courses -f Dockerfile.dev .
+  - docker build -t escobard/docker-courses -f Dockerfile .
 
 ## tells the service to run a script, after the docker container has been built
 scripts:
