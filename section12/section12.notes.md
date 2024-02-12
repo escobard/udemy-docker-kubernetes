@@ -40,7 +40,13 @@
 - kind in config files determines the type of k8 object that will be created
 - each API version determines the different set of objects available
 
+#### k8 pod
+- a pod runs in a k8 node (vm running in k8s)
+- can run one or more containers inside a pod
+- used to run containers with a very similar purpose
+  - discouraged to use a single pod for multiple (dependent) applications
 
+#### k8 service
 
 
 

@@ -5,8 +5,12 @@ metadata:
   labels:
     component: web
 spec:
+  # can specify multiple containers
   containers:
+    # name is used mainly for logging purposes
     - name: client
+      # establishes the docker image for the container
       image: stephengrider/multi-client
+      # establishes ports to expose
       ports:
         - containerPort: 3000
