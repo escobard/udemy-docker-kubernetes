@@ -6,6 +6,9 @@
 - cluster is made of nodes + master
 - master controls what each node does
 - each node is a VM that runs containers
+- requires manual network setup
+- expects each docker image to be pre-built
+  - in other words, kubernetes does not offer a service to build docker images
 
 ## why would we want to use it
 - it is discouraged to use kubernetes with a project that has a single container
