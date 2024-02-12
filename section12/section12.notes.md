@@ -30,7 +30,15 @@
 - takes instructions from user and applies changes to the cluster
 - updates nodes following the specified rules
 
-
+### kubernetes object
+- serve different purposes - running a container, monitoring a container, setting up networking, etc
+- can create different kinds of objects
+  - statefulSet
+  - ReplicaController
+  - Pod - used to run a container
+  - Service - can set up networking rules
+- kind in config files determines the type of k8 object that will be created
+- each API version determines the different set of objects available
 
 
 
