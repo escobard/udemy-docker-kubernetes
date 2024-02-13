@@ -47,11 +47,22 @@
   - discouraged to use a single pod for multiple (dependent) applications
 
 #### k8 service
+- sets up networking in a Kubernetes Cluster
+- has several subtypes:
+  - clusterIp
+  - nodePort - exposes a container to the outside world (only good for dev purposes)
+  - loadBalancer
+  - ingress
 
+##### k8 service - nodeport
+- connects the k8 proxy (where requests come in) to pods
+- selects specific components through the use of labels
 
-
-
-
+### kubernetes commands
+- kubctl apply -f client-pod.yaml
+  - adds the specified object to the k8 cluster
+- kubctl get pods (object)
+  - lists available objects
 
 
 

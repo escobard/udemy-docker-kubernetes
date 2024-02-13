@@ -5,8 +5,13 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - ports: 3050
+    # exposes a port so that other pods or containers can access the container within this service
+    - port: 3050
+      # establishes the container port to connect to, must match the pod port
       targetPort: 3000
+      # exposes a port that is externally accessible
+      ## we will use this port to access the pod
       nodePort: 31515
+  # label selector approach selects pod/containers with a matching label
   selector:
     component: web
