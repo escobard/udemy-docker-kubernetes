@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  # used mainly for logging purposes
+  name: client-pod
+  # tightly coupled with service object
+  ## severice uses this label to identify pods in the network
+  labels:
+    component: web
+spec:
+  # can specify multiple containers
+  containers:
+    # name is used mainly for logging purposes
+    - name: client
+      # establishes the docker image for the container
+      image: stephengrider/multi-client
+      # establishes ports to expose
+      ports:
+        - containerPort: 3000

@@ -1,3 +1,6 @@
+# section 13 goal
+- multi-container deployments in k8s with declerative deployments
+
 # leveraging a declerative approach 
 - pass a new updated config file to kubectl
   - each config file has a 
