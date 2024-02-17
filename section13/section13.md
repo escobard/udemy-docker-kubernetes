@@ -1,6 +1,11 @@
 # section 13 goal
 - multi-container deployments in k8s with declerative deployments
 
+# kubectl describe
+- prints out detailed information about an object on k8
+- kubectl describe pod client-pod
+  - kubectl describe <object type> <object name>
+
 # leveraging a declerative approach 
 - pass a new updated config file to kubectl
   - each config file has a 
