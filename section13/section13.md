@@ -1,6 +1,13 @@
 # section 13 goal
 - multi-container deployments in k8s with declerative deployments
 
+# kubectl delete
+- deletes an object from k8s cluster
+- kubectl delete -f <config file>
+- goes through the same process as killing a docker container:
+  - attempts to turns container off
+  - container gets killed after a time delay
+
 # kubectl describe
 - prints out detailed information about an object on k8
 - kubectl describe pod client-pod
@@ -28,3 +35,11 @@
 - monitors the state of each pod, updating as necessary
 - good for maintaining dev and production environments
 - it is recommended to use deployment objects instead of pods for release environments
+
+### browse deployment objects
+- command - kubectl get deployments
+- specifies stats for each container in the deployment
+
+## service objects
+- service acts as a load balancer / proxy to route requests to pods
+- route traffic to pods that have a matching selector
