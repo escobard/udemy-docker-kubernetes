@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+# sets up the kind of k8s object
+kind: Deployment
+# sets up k8 metadata
+metadata:
+  name: client-deployment
+# sets up specs for master to manage
+spec:
+  # determines how many replicas/containers should be running
+  replicas: 1
+  ## select the pod to create by label
+  selector:
+    matchLabels:
+      component: web
+  ## determines the configuration of the spec for each pod that is created and maintained by this deployment file
+  ## very similar config to a pod object, since this config creates a k8 pod
+  template:
+    metadata:
+      labels:
+        ## label must match the selector that acts on the label
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: stephengrider/multi-client
+          ports:
+            - containerPort: 3000
