@@ -39,11 +39,12 @@
 ### k8 persistent volume
 - persists on pod and container exit
 - new pod connects to the persisted volume that exists outside of a pod
-- statically provisioned persistent volume has pre-determined harddrive (volume claims)
-- dynamically provisioned persistent volume can swap out harddrive (volume claims)
+- statically provisioned persistent volume has pre-determined harddrive (requires volume claims)
+- dynamically provisioned persistent volume can swap out harddrive (does not require volume claims)
 
 ### k8 persistent volume claim
 - the rules / laws that determine the hardware available for volumes
+- 
 
 ## combine k8s config into a single file
 - can combine multiple k8s config into a single file
