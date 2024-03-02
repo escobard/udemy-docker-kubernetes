@@ -12,8 +12,24 @@ spec:
       labels:
         component: postgres
     spec:
+      # allocates pvc to pod
+      volumes:
+        # this is the identifier that is used to mount the volume
+        - name: postgres-storage
+          ## grabs the specified pvc
+          persistentVolumeClaim:
+            claimName: database-persistent-volume-claim
       containers:
         - name: postgres
           image: postgres
           ports:
             - containerPort: 5432
+          # tells docker to use the specified volume (by name)
+          volumeMounts:
+            - name: postgres-storage
+              ## anything the container stores in this location is stored to the volume
+              ### this is the default storage location for postgres
+              mountPath: /var/lib/postgresql/data
+              # determines the root folder for the mountPath
+              ## this is a postgres specific setting
+              subPath: postgres

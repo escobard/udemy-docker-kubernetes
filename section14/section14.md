@@ -36,13 +36,13 @@
     - data is lost on pod exit
   - we want to use persistent volume
 
-### k8 persistent volume
+### k8 persistent volume (PV)
 - persists on pod and container exit
 - new pod connects to the persisted volume that exists outside of a pod
 - statically provisioned persistent volume has pre-determined harddrive (requires volume claims)
 - dynamically provisioned persistent volume can swap out harddrive (does not require volume claims)
 
-### k8 persistent volume claim
+### k8 persistent volume claim (PVC)
 - the rules / laws that determine the hardware available for volumes
 - 
 
