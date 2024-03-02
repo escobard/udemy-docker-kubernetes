@@ -22,6 +22,10 @@
 - kubectl logs <name of pod>
   - eg, kubectl logs server-deployment-56685c959c-rj4s8
 
+## k8s persistent volumes
+- to ensure data is persisted on container exits, k8s requires volumes for persistent data stores (databases)
+- without volumes, container re-starts do not persist data from the previous container 
+
 ## combine k8s config into a single file
 - can combine multiple k8s config into a single file
 - seperate each config with: ---
