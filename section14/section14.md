@@ -18,6 +18,10 @@
 - kubectl delete -f <directory path>
   - eg, kubectl delete -f kubernetes
 
+## k8s logs
+- kubectl logs <name of pod>
+  - eg, kubectl logs server-deployment-56685c959c-rj4s8
+
 ## combine k8s config into a single file
 - can combine multiple k8s config into a single file
 - seperate each config with: ---
