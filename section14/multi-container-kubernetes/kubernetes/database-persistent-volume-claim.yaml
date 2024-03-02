@@ -2,9 +2,13 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: database-persistent-volume-claim
+# determines the harddrive that the computer allocates to this k8s volume
 spec:
+  # determines how other containers access this volume
   accessModes:
+    # other modes available - ReadOnceMany (multiple nodes can read this), ReadWriteMany (can be written and read by many nodes)
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      # tells k8s what kind of storage to find
+      storage: 1Gi
