@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-cluster-ip-service
+spec:
+  type: ClusterIP
+  # selects the label that it is supposed to route traffic to
+  selector:
+    component: web
+  ports:
+    # ports are left the same for inbound/outbound traffic for convenience
+    ## gives access to other pods that have to access this service
+    - port: 3000
+      ## gives access to the container to access k8s
+      targetPort: 3000
