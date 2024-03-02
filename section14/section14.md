@@ -22,9 +22,17 @@
 - kubectl logs <name of pod>
   - eg, kubectl logs server-deployment-56685c959c-rj4s8
 
-## k8s persistent volumes
+## why volumes are needed for databases in k8s
 - to ensure data is persisted on container exits, k8s requires volumes for persistent data stores (databases)
-- without volumes, container re-starts do not persist data from the previous container 
+- without volumes, container re-starts do not persist data from the previous container
+- volume in container terminology - a mechanism that allows a container to access a filesystem outside of itself
+
+## k8 volumes
+- an object that allows a container to store data at the pod level
+- three types of k8 volumes are available, volume, persistent volume and persistent volume claim
+  - volume type does not persist data that needs to last! 
+    - volume type only exists for as long as the pod exists
+  - we want to use persistent volume
 
 ## combine k8s config into a single file
 - can combine multiple k8s config into a single file
