@@ -17,3 +17,10 @@
 ## k8s delete all config files in a directory
 - kubectl delete -f <directory path>
   - eg, kubectl delete -f kubernetes
+
+## combine k8s config into a single file
+- can combine multiple k8s config into a single file
+- seperate each config with: ---
+- easier to relate config that is coupled
+- harder to make sense of what config does by looking at file names
+- its preference that dictates to keep individual or combined config files
