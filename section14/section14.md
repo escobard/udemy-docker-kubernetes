@@ -31,8 +31,17 @@
 - an object that allows a container to store data at the pod level
 - three types of k8 volumes are available, volume, persistent volume and persistent volume claim
   - volume type does not persist data that needs to last! 
+    - exists within a pod
     - volume type only exists for as long as the pod exists
+    - data is lost on pod exit
   - we want to use persistent volume
+
+### k8 persistent volume
+- persists on pod and container exit
+- new pod connects to the persisted volume that exists outside of a pod
+
+### k8 persistent volume claim
+- 
 
 ## combine k8s config into a single file
 - can combine multiple k8s config into a single file
