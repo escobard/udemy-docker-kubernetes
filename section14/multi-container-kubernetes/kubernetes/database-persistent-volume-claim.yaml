@@ -12,3 +12,5 @@ spec:
     requests:
       # tells k8s what kind of storage to find
       storage: 1Gi
+# by default, k8s grabs space from your harddrive on your computer or the default space option on the cloud
+## can grab storage from other locations, in cloud providers different source hard drive space options are available
