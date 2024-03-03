@@ -33,3 +33,9 @@ spec:
               # determines the root folder for the mountPath
               ## this is a postgres specific setting
               subPath: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword
+                  key: PGPASSWORD

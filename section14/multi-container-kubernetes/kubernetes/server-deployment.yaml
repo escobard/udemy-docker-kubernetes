@@ -30,3 +30,9 @@ spec:
               value: 5432
             - name: PGDATABASE
               value: postgres
+            - name: PGPASSWORD
+              ## how to assign env variable values from secrets
+              valueFrom:
+                - secretKeyRef:
+                    name: pgpassword
+                    key: PGPASSWORD
