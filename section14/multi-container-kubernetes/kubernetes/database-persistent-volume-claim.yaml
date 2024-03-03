@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database-persistent-volume-claim
+# determines the harddrive that the computer allocates to this k8s volume
+spec:
+  # determines how other containers access this volume
+  accessModes:
+    # other modes available - ReadOnceMany (multiple nodes can read this), ReadWriteMany (can be written and read by many nodes)
+    - ReadWriteOnce
+  resources:
+    requests:
+      # tells k8s what kind of storage to find
+      storage: 1Gi
+# by default, k8s grabs space from your harddrive on your computer or the default space option on the cloud
+## can grab storage from other locations, in cloud providers different source hard drive space options are available
