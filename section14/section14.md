@@ -44,7 +44,14 @@
 
 ### k8 persistent volume claim (PVC)
 - the rules / laws that determine the hardware available for volumes
-- 
+- pvc claims can be used by pvs to create volumes with specified hardware
+
+## k8 secrets object
+- securely stores a piece of information in the cluster, such as a database password
+- can be created with a command instead of a config file, to avoid storing secret logic in a static file
+- command to create secret:
+  - kubectl create secret <secret type - generic / docker-registry / tls> <secret name> --from-literal key=value
+    - eg, kubectl create secret generic secret_name --from-literal secret_key=secret_value
 
 ## combine k8s config into a single file
 - can combine multiple k8s config into a single file
