@@ -10,14 +10,14 @@
 - known as the ingress controller
 
 ## kubernetes ingress types
-- ingres-ngnix - a community led project
+- ingres-nginx - a community led project
   - this is what we will be using
-- kubernetes-ingress - a project led by the company ngnix
+- kubernetes-ingress - a project led by the company nginx
 
-### kubernetes ingress-ngnix
+### kubernetes ingress-nginx
 - works differently depending on your environment
   - local vs cloud
-    - each cloud has different ingress-ngnix config
+    - each cloud has different ingress-nginx config
 - different infrastructure depending on environment (confusing)
 
 ### kubernetes ingress-ngnix install
