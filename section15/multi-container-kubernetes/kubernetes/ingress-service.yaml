@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+# UPDATE API
+kind: Ingress
+metadata:
+  name: ingress-service
+  ## additional config options that specify high level configurations around the ingres object that gets created
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+    ## determines how ngnix behaves
+    ### removes the route path before routing the request to the container
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          # tells k8s how to route requests based on path
+          - path: /?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: client-cluster-ip-service
+                port:
+                  number: 3000
+          - path: /api/?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: server-cluster-ip-service
+                port:
+                  number: 5000
